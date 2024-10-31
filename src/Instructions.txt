@@ -1,4 +1,7 @@
-You are tasked with designing a vehicle rental system. The system has to manage different types of vehicles (cars, trucks and motorcycles). It also needs to save information about customers who rent these vehicles.
+You are tasked with designing a vehicle rental system.
+The system has to manage different types of
+vehicles (cars, trucks and motorcycles).
+It also needs to save information about customers who rent these vehicles.
 
 Vehicle information:
 
