@@ -19,6 +19,14 @@ public class Main {
             "0. Exit"
     };
 
+    private static final String[] MENU_AVAILABLE_VEHICLES = {
+            "Select Vehicle Type to View Available Vehicles:",
+             "1. Car",
+             "2. Truck",
+             "3. Motorcycle",
+    };
+
+
     public static void main(String[] args) {
 
         // List to store all the vehicles in the rental system
@@ -62,6 +70,7 @@ public class Main {
             }
 
             switch (choice) {
+                // case to handle vehicle rental
                 case 1:
                     System.out.print("Enter customer name: ");
                     String name = scanner.nextLine();
@@ -138,6 +147,7 @@ public class Main {
                     break;
 
                 case 2:
+                    // case to handle vehicle returned by customer
                     System.out.print("Enter customer name for vehicle return: ");
                     String returnName = scanner.nextLine();
                     Customer returnCustomer = new Customer(returnName, "Address", 30);
@@ -162,6 +172,7 @@ public class Main {
                     break;
 
                 case 3:
+                    // case to handle rented vehicles
                     System.out.println("Rented Vehicles:");
                     for (Vehicle vehicle : vehicleList) {
                         if (rental.isVehicleRented(vehicle)) {
@@ -171,10 +182,8 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("Select Vehicle Type to View Available Vehicles:");
-                    System.out.println("1. Car");
-                    System.out.println("2. Truck");
-                    System.out.println("3. Motorcycle");
+                    // case to handle available vehicles to rent
+                    printMenu(MENU_AVAILABLE_VEHICLES);
                     System.out.print("Enter your choice: ");
                     int viewTypeChoice;
                     try {
@@ -248,8 +257,15 @@ public class Main {
 
     }
 
+    // print menu information
     private static void printMenu() {
         for (String option : MENU_OPTIONS) {
+            System.out.println(option);
+        }
+    }
+
+    private static void printMenu(String[] menuOptions) {
+        for (String option : menuOptions) {
             System.out.println(option);
         }
     }
