@@ -1,16 +1,22 @@
 public class Truck extends Vehicle{
-    private double cargoWeight;
+    private int cargoWeight;
 
-    public Truck(String licensePlate, String colour, double pricePerDay) {
+    public Truck(String licensePlate, String colour, double pricePerDay, int cargoWeight ) {
         super(licensePlate, colour, pricePerDay);
+        this.cargoWeight = cargoWeight;
     }
 
-    public double getCargoWeight() {
+    public int getCargoWeight() {
         return cargoWeight;
     }
 
-    public void setCargoWeight(double cargoWeight) {
+    public void setCargoWeight(int cargoWeight) {
         this.cargoWeight = cargoWeight;
+    }
+
+
+    public double calculateDailyRentalCost() {
+        return super.getPricePerDay() + 1.2 * getPricePerDay();
     }
 
     @Override
@@ -19,8 +25,5 @@ public class Truck extends Vehicle{
                 "cargoWeight=" + cargoWeight;
     }
 
-    @Override
-    public double calculateDailyRentalCost(int days) {
-        return 0;
-    }
+
 }

@@ -17,6 +17,6 @@ public class Motorcycle extends Vehicle{
     // Override the getPricePerDay method to include the brand in the price calculation
     @Override
     public double calculateDailyRentalCost() {
-        return super.getPricePerDay() + 0.2 * getPricePerDay();
+        return super.getPricePerDay() + 1.1 * getPricePerDay();
     }
 }
