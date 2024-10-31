@@ -151,6 +151,10 @@ public class Main {
                         }
                     }
                     if (vehicleToReturn != null) {
+                        System.out.print("Enter return date(\"yyyy-MM-dd\"): ");
+                        Scanner scanner = new Scanner(System.in);
+                        String returnDate = scanner.nextLine();
+                        rental.setReturnDate(returnDate);
                         rental.returnVehicle(vehicleToReturn, returnCustomer);
                     } else {
                         System.out.println("Invalid or unavailable vehicle.");

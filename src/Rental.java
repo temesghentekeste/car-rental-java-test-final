@@ -19,6 +19,13 @@ public class Rental {
         this.rentedVehicleMap = new HashMap<>();
     }
 
+    // Getters and setters
+
+
+    public void setReturnDate(String returnDate) {
+        this.returnDate = returnDate;
+    }
+
     // Method to rent a vehicle
     public void rentVehicle(Vehicle vehicle, Customer customer) {
         if (!availableVehicleList.contains(vehicle)) {
@@ -45,7 +52,7 @@ public class Rental {
         }
 
         vehicle.setStatus(false);
-        returnDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+
         totalPrice = calculateTotalPrice(vehicle, startDate, returnDate);
         System.out.println("Vehicle returned by " + customer.getName() + " on " + returnDate + ", total price: " + totalPrice);
         rentedVehicleMap.get(customer).remove(vehicle);
@@ -57,9 +64,12 @@ public class Rental {
         LocalDate start = LocalDate.parse(startDate, formatter);
         LocalDate end = LocalDate.parse(returnDate, formatter);
 
+
         long days = ChronoUnit.DAYS.between(start, end);
         return days * vehicle.calculateDailyRentalCost();
     }
+
+
 
     // print rental details
     public void printRentalDetails(Customer customer) {
